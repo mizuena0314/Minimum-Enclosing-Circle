@@ -35,8 +35,8 @@ function setup() {
   for (let i=0; i<dotCnt; i++){
     let x1,y1;
     while(1){
-      x1 = Math.floor(randomIntFromInterval(Math.floor(h/5), Math.floor(h*4/5)));
-      y1 = Math.floor(randomIntFromInterval(Math.floor(h/5), Math.floor(h*4/5)));
+      x1 = Math.floor(randomIntFromInterval(0,w));
+      y1 = Math.floor(randomIntFromInterval(0,h));
       if(dist(x1,y1,w/4,h/2)<h/3){
         break;
       }
