@@ -1,5 +1,4 @@
 let w = 700;
-console.log(w);
 let h = 300;
 
 let x = [];
