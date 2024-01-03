@@ -23,7 +23,8 @@ let ratio = 0.1;
 let fontRegular;
 
 function preload(){
-  fontRegular = loadFont('assets/AnonymousPro-Regular.ttf');
+  //fontRegular = loadFont('http://127.0.0.1:5500/Minimum-Enclosing-Circle/assets/AnonymousPro-Regular.ttf');
+  fontRegular = loadFont('assets/AnonymousPro-Regular.ttf')
 }
 
 function randomIntFromInterval(min, max) { // min and max included 
@@ -37,15 +38,15 @@ function setup() {
   for (let i=0; i<dotCnt; i++){
     let x1,y1;
     while(1){
-      x1 = Math.floor(randomIntFromInterval(0,w));
-      y1 = Math.floor(randomIntFromInterval(0,h));
-      if(dist(x1,y1,w/4,h/2)<h/3){
+      x1 = Math.floor(randomIntFromInterval(0,w/2));
+      y1 = Math.floor(randomIntFromInterval(-1*h/2,h/2));
+      if(dist(x1,y1,w/4,0)<h/3){
         break;
       }
     }
-    x.push(x1);
+    x.push(-1*x1);
     y.push(y1);
-    sumX += x1;
+    sumX -= x1;
     sumY += y1;
   }
   textFont(fontRegular);
@@ -60,7 +61,7 @@ function draw() {
   //draw points
   fill('#FFFF00');
   for (let i=0; i<dotCnt; i++){
-    ellipse(x[i], y[i], 5, 5);
+    circle(x[i], y[i], 5);
   }
   noFill();
 
@@ -69,7 +70,7 @@ function draw() {
     centerX = sumX/dotCnt;
     centerY = sumY/dotCnt;
     fill('#FF0000');
-    ellipse(centerX, centerY, 5, 5);
+    circle(centerX, centerY, 5);
     noFill();
     tmp+=1;
   }
@@ -93,10 +94,10 @@ function draw() {
 
   //draw circle and radius at current step
   fill('#FF0000');
-  ellipse(centerX, centerY, 5, 5);
+  circle(centerX, centerY, 5);
   noFill();
   stroke('#FF0000');
-  ellipse(centerX, centerY, 2*radius, 2*radius);
+  circle(centerX, centerY, 2*radius);
   noStroke();
   stroke('#FFFFFF');
   line(centerX, centerY, x[cursor], y[cursor]);
@@ -106,7 +107,7 @@ function draw() {
   if(complete){
     //draw final state of circle
     stroke('#69F542');
-    ellipse(centerX, centerY, 2*radius, 2*radius);
+    circle(centerX, centerY, 2*radius);
     noStroke();
 
     //draw final radius
@@ -119,11 +120,11 @@ function draw() {
   }
 
   //show current status
-  fill('#FFFFFF');
-  text("iteration = "+loop, 3*w/4-90, h/2-45);
-  text("r = "+radius.toFixed(3), 3*w/4-90, h/2-15);
-  text("x = "+centerX.toFixed(3), 3*w/4-90, h/2+15);
-  text("y = "+centerY.toFixed(3), 3*w/4-90, h/2+45);
+  fill('#F5F5F5');
+  text("iteration = "+loop, 90, -75);
+  text("r = "+radius.toFixed(3), 90, -25);
+  text("x = "+centerX.toFixed(3), 90, 25);
+  text("y = "+centerY.toFixed(3), 90, 75);
   noFill();
 
   //for next heuristic
@@ -131,3 +132,4 @@ function draw() {
   centerY = centerY + (y[cursor]-centerY)*ratio;
   ratio = ratio*0.99;
 }
+
