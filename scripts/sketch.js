@@ -56,6 +56,7 @@ function setup() {
 
 function draw() {
   background('#0c0c0c');
+  smooth();
   loop+=1;
 
   //draw points
