@@ -1,4 +1,5 @@
-let w = 3*window.innerWidth/4;
+let w = 700;
+console.log(w);
 let h = 300;
 
 let x = [];
@@ -21,8 +22,9 @@ let dotCnt = 100;
 let ratio = 0.1;
 
 let fontRegular;
+
 function preload(){
-  fontRegular = 'Anonymous Pro';
+  fontRegular = loadFont('assets/AnonymousPro-Regular.ttf');
 }
 
 function randomIntFromInterval(min, max) { // min and max included 
@@ -31,8 +33,7 @@ function randomIntFromInterval(min, max) { // min and max included
 // credits to Francisc and danday74 on stackoverflow
 
 function setup() {
-  createCanvas(w, h, document.getElementById('p5canvas'));
-  document.getElementById('p5canvas').style.display = "none";
+  createCanvas(w, h, WEBGL, document.getElementById('p5canvas'));
 
   for (let i=0; i<dotCnt; i++){
     let x1,y1;
