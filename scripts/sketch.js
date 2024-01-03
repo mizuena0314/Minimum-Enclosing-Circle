@@ -49,14 +49,15 @@ function setup() {
     sumX -= x1;
     sumY += y1;
   }
+
   textFont(fontRegular);
   textSize(30);
   frameRate(8);
+  smooth();
 }
 
 function draw() {
   background('#0c0c0c');
-  smooth();
   loop+=1;
 
   //draw points
