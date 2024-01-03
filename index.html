@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en-US">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>minimum enclosing circle</title>
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-  </style>
-  <script src="p5.js"></script>
-  <!-- <script src="../addons/p5.sound.js"></script> -->
-  <script src="sketch.js"></script>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Minimum Enclosing Circle</title>
 
-<body>
-  <main>
-  </main>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet" />
+    
+    <script src="scripts/p5.js"></script>
+    <script src="scripts/sketch.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <h1>Minimum Enclosing Circle using Simulated Annealing</h1>
+      
+      <p>
+        The <strong>minimum enclosing circle</strong> is the smallest circle that contains all of a given set of points in the Euclidean plane.
+        One solution to the problem of finding this circle is to use <em>simulated annealing</em>. 
+      </p>
+
+      <h2>Simulated Annealing</h2>
+      <p>
+        Put simply, simulated annealing is an <em>optimization technique</em>.
+        We start with an initial solution to the problem and look for a nearby solution.
+        If this nearby solution is better than our initial solution, we update our solution.
+        We repeat this until we can find a &quot;good enough&quot; solution.
+        <br><br/>
+        The downfall of this method is that it is easy to fall into a local minimum trap,
+        in which a seemingly optimal nearby solution is not actually globally optimal.
+        However, we do not need to worry about ths in the minimum enclosing circle problem because
+        <strong>distance functions are convex</strong>.
+      </p>
+
+      <p>
+        <canvas id="p5canvas">
+        </canvas>
+      </p>
+    </main>
+  </body>
 
 </html>

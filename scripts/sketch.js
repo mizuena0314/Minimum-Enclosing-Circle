@@ -1,5 +1,5 @@
-var w = window.innerWidth;
-var h = window.innerHeight;
+let w = 3*window.innerWidth/4;
+let h = 300;
 
 let x = [];
 let y = [];
@@ -17,12 +17,12 @@ let centerX = 0;
 let centerY = 0;
 let radius = 0;
 
-let dotCnt = 300;
+let dotCnt = 100;
 let ratio = 0.1;
 
 let fontRegular;
 function preload(){
-  fontRegular = 'Georgia';
+  fontRegular = 'Anonymous Pro';
 }
 
 function randomIntFromInterval(min, max) { // min and max included 
@@ -31,7 +31,9 @@ function randomIntFromInterval(min, max) { // min and max included
 // credits to Francisc and danday74 on stackoverflow
 
 function setup() {
-  createCanvas(w,h);
+  createCanvas(w, h, document.getElementById('p5canvas'));
+  document.getElementById('p5canvas').style.display = "none";
+
   for (let i=0; i<dotCnt; i++){
     let x1,y1;
     while(1){
@@ -52,7 +54,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background('#0c0c0c');
   loop+=1;
 
   //draw points
@@ -119,9 +121,9 @@ function draw() {
   //show current status
   fill('#FFFFFF');
   text("iteration = "+loop, 3*w/4-90, h/2-45);
-  text("r = "+radius, 3*w/4-90, h/2-15);
-  text("x = "+centerX, 3*w/4-90, h/2+15);
-  text("y = "+centerY, 3*w/4-90, h/2+45);
+  text("r = "+radius.toFixed(3), 3*w/4-90, h/2-15);
+  text("x = "+centerX.toFixed(3), 3*w/4-90, h/2+15);
+  text("y = "+centerY.toFixed(3), 3*w/4-90, h/2+45);
   noFill();
 
   //for next heuristic
