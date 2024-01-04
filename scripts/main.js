@@ -157,8 +157,8 @@ button.addEventListener("click", (event) => {
     var maxiter = document.getElementById("iter").value;
     if(isInt(pointcnt) && isInt(maxiter)){
         if(Number(pointcnt)>=10 && Number(pointcnt)<=300 && Number(maxiter)>=100 && Number(maxiter)<=1000){
-            maxiteration = maxiter;
-            dotCnt = pointcnt;
+            maxiteration = Number(maxiter);
+            dotCnt = Number(pointcnt);
             new p5(p5project, 'p5canvas');
         }
     }
