@@ -26,7 +26,7 @@ var p5project = sketch => {
         //fontRegular = sketch.loadFont('http://127.0.0.1:5500/Minimum-Enclosing-Circle/assets/AnonymousPro-Regular.ttf');
         
         //For hosting
-        fontRegular = loadFont('assets/AnonymousPro-Regular.ttf');
+        fontRegular = sketch.loadFont('assets/AnonymousPro-Regular.ttf');
         
         sketch.createCanvas(w, h, document.getElementById('p5canvas'));
 
