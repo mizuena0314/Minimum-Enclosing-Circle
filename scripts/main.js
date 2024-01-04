@@ -52,7 +52,6 @@ var p5project = sketch => {
     };
 
     sketch.draw = function() {
-        let forceExit = 0;
         button.addEventListener("click", ( eraseall ) => {
             var pointcnt = document.getElementById("dotcnt").value;
             var maxiter = document.getElementById("iter").value;
