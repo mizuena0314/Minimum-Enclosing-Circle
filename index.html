@@ -12,7 +12,7 @@
     <link href="styles/styles.css" rel="stylesheet" />
     
     <script src="scripts/p5.js"></script>
-    <script src="scripts/sketch.js" defer></script>
+    <script src="scripts/main.js" defer></script>
   </head>
 
   <body>
@@ -38,9 +38,50 @@
       </p>
 
       <h2>Sample Visualization</h2>
-      <p>
-        <canvas id="p5canvas">
+      <p id="visualization">
+        <div class="p5">
+          <div class="p5params">
+            <label for="dotcount">Number of points (10 ~ 300 inclusive):</label>
+            <input type="text" inputmode="numeric" id="dotcnt" name="dotcnt" required min="10" max="300" size="5" />
+          </div>
+          <div class="p5params">
+            <label for="iter">Number of iterations (100 ~ 1000 inclusive):</label>
+            <input type="text" inputmode="numeric" id="iter" name="iter" required min="100" max="1000" size="5" />
+          </div>
+          <div class="p5params">
+            <button id="run">Run!</button>
+          </div>
+        </div>
+
+        <canvas id="p5canvas" width="700" height="300">
         </canvas>
+      </p>
+
+      <h2>How To Run</h2>
+      <p id="user-guide">
+        Above is a simple app using p5.js which simulates the simulated annealing solution. Here is how to use the app.
+        <ol>
+          <li>Input the number of points with your keyboard. This will set the number of points that will be generated randomly.
+            This value must be an integer between 10 and 300 inclusive.</li>
+          <li>Input the number of iterations. This is the number of times the simulation will look for a nearby solution until it determines the solution to be &quot;good enough&quot;. 
+            This value must be an integer between 100 and 1000 inclusive.</li>
+          <li>Click on the &quot;Run!&quot; button. The simulation will start running.</li>
+        </ol> 
+
+      <ul>
+          <li>Once the visualization starts running, you will be shown:</li>
+          <ol>
+            <li>The number of steps completed.</li>
+            <li>The radius of the current circle, &apos;r&apos;.</li>
+            <li>The x coordinate of the center of the current circle, &apos;x&apos;.</li>
+            <li>The y coordinate of the center of the current circle, &apos;y&apos;.</li>
+            <li>The circle of the current step as a red circle (turns green upon completion).</li>
+          </ol> 
+            <li>The radius of the current circle, &apos;r&apos;.</li>
+          <li>To change some parameters and re-run the visulation, change the values in the appropriate fields then simply click the button again.
+            In fact, it may be interesting to see how the accuracy of the process changes or how drastic the updates get based on the parameter values.
+          </li>
+        </ul>
       </p>
     </main>
   </body>

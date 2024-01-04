@@ -1,0 +1,29 @@
+{
+  "name": "minimum-enclosing-circle",
+  "version": "1.0.0",
+  "description": "a minimum enclosing circle visualization",
+  "main": "scripts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizuena0314/Minimum-Enclosing-Circle.git"
+  },
+  "keywords": [
+    "geometry",
+    "simulation",
+    "visualization",
+    "p5.js"
+  ],
+  "author": "mizuena0314",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mizuena0314/Minimum-Enclosing-Circle/issues"
+  },
+  "homepage": "https://github.com/mizuena0314/Minimum-Enclosing-Circle#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
