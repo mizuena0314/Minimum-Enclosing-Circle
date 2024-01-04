@@ -21,6 +21,7 @@ var p5project = sketch => {
 
     sketch.setup = function() {
         let fontRegular;
+        runs = 0;
 
         //For local testing
         //fontRegular = sketch.loadFont('http://127.0.0.1:5500/Minimum-Enclosing-Circle/assets/AnonymousPro-Regular.ttf');
